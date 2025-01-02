@@ -1,0 +1,36 @@
+# Technical Stack
+
+- Next.js 15
+- Ant Design
+- Ant Design X
+- Tauri
+
+
+# Project Structure
+
+## Tauri
+
+The source code is organized by modules, with each module containing corresponding business logic, API interfaces, database interactions, VOs, entities, DTOs, etc.
+
+```
+src-tauri/
+├── src/
+│   ├── business/
+│   │   ├── xxx/
+│   │   │   ├── xxx_service.rs       # Business logic layer, handling user-related business logic
+│   │   │   ├── xxx_api.rs           # API interfaces for frontend calls
+│   │   │   ├── xxx_repository.rs    # Database interaction layer for user-related data operations
+│   │   │   ├── xxx_vo.rs            # User-related Value Objects (VO)
+│   │   │   ├── xxx_entity.rs        # User entity classes mapping to database tables
+│   │   │   ├── xxx_dto.rs           # Data Transfer Objects for API interfaces
+│   ├── infrastructure/
+│   │   ├── database.rs              # Database connection and transaction management
+│   │   ├── config.rs                # Configuration file management
+│   │   ├── logger.rs                # Logging management
+│   ├── shared/
+│   │   ├── errors.rs                # Error handling
+│   │   ├── utils.rs                 # Common utility functions
+│   └── main.rs                      # Main entry point for Tauri application
+├── Cargo.toml                       # Rust project configuration
+└── tauri.conf.json                  # Tauri configuration file
+```
